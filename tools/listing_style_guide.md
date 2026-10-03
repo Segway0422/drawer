@@ -32,10 +32,9 @@ See `tools/make_thumbnail.py` for the generator. Summary:
 
 - Square canvas, 1200x1200px.
 - The 3 colorways (or 3 designs) shown side by side as equal vertical
-  bands, each a center-cropped strip of that pattern.
-- 6px white divider between bands (only needed when building bands from
-  separate source images; skip it when starting from an already
-  pre-composited 3-panel image).
+  bands, each a center-cropped strip of that pattern, flush against
+  each other with **no divider line** — whether built from separate
+  source images or from an already pre-composited 3-panel image.
 - Bottom label bar: solid near-black (20, 20, 20), 150px tall, full width.
 - Title: Liberation Serif Bold, white, centered, auto-shrinks from 64pt
   (floor 28pt) to fit. Short product name, e.g. "KIKU CHRYSANTHEMUM".

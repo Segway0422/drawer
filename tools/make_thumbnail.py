@@ -7,9 +7,12 @@ Style spec (agreed 2026-10-03):
   - 3 colorways shown side by side as equal vertical bands
     (each band = a center-cropped vertical strip of that colorway,
     scaled to fill its band height-to-height).
-  - 6px white divider between bands when building bands from
-    separate source images (skip the divider if the source is
-    already a pre-composited 3-panel image).
+  - No divider between bands — they sit flush against each other,
+    whether built from separate source images or from an already
+    pre-composited 3-panel image. (Revised 2026-10-03: an earlier
+    version added a 6px white divider when building from separate
+    images, but that broke visual consistency with the no-divider
+    composites — don't reintroduce it.)
   - Bottom label bar: solid near-black (20, 20, 20), 150px tall,
     spanning the full width.
   - Title: Liberation Serif Bold, white, centered, starts at 64pt
@@ -36,7 +39,6 @@ from PIL import Image, ImageDraw, ImageFont
 
 CANVAS = 1200
 BAR_H = 150
-DIVIDER = 6
 FONT_TITLE = "/usr/share/fonts/truetype/liberation/LiberationSerif-Bold.ttf"
 FONT_SUB = "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf"
 GOLD = (220, 195, 150)
@@ -53,10 +55,6 @@ def build_from_bands(paths):
         left = (w - crop_w) // 2
         strip = im.crop((left, 0, left + crop_w, h)).resize((band_w, CANVAS), Image.LANCZOS)
         canvas.paste(strip, (i * band_w, 0))
-    draw = ImageDraw.Draw(canvas)
-    for i in range(1, len(paths)):
-        x = i * band_w
-        draw.rectangle([x - DIVIDER // 2, 0, x + DIVIDER // 2, CANVAS], fill=(255, 255, 255))
     return canvas
 
 
