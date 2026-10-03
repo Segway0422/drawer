@@ -3,6 +3,29 @@
 House conventions agreed on 2026-10-03. Reuse these for every new pattern
 listing instead of improvising a new format each time.
 
+## Title
+
+Format (fill in the bracketed parts, keep the commas):
+
+```
+Japanese {Motif} Seamless Pattern Set of 3, {Short descriptor} Digital Paper, {Color1} {Color2} {Color3}
+```
+
+- `{Motif}`: the pattern's name (Kiku Chrysanthemum, Shippo, Asanoha
+  Geometric, Indigo Floral, Retro Pop Kiku, ...). If a second listing
+  shares the same base motif in a different style, disambiguate in the
+  motif itself (e.g. "Kiku Chrysanthemum" vs "Kiku Chrysanthemum Gold" vs
+  "White Chrysanthemum") — never ship two listings with an identical
+  `{Motif}`.
+- `{Short descriptor}`: a 1-3 word style tag (Wagara, Elegant Kiku, Modern
+  Hexagon, Circle Motif, Chrysanthemum, Floral...).
+- `{Color1} {Color2} {Color3}`: the three colorway names, space-separated,
+  no commas between them. If the 3 files differ by motif rather than
+  color (like Indigo Floral's peony/camellia/willow set), name the shared
+  trait instead (e.g. "Hand-Dyed Indigo").
+- Check the result is under Etsy's 140-character title limit before
+  publishing.
+
 ## Thumbnail image
 
 See `tools/make_thumbnail.py` for the generator. Summary:
